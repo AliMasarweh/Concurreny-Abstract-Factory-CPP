@@ -13,7 +13,7 @@ public:
     Thread *createThread();
     Mutex *createMutex();
     MessageQueue *createMessageQueue();
-    ConcurrencyAbstractFactory* getInstance();
+    static ConcurrencyAbstractFactory* getInstance();
 
 private:
     LinuxConcurrencyAbstractFactory();
