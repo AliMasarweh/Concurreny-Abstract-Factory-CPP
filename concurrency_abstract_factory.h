@@ -16,6 +16,8 @@ public:
     virtual Mutex* createMutex() = 0;
     virtual MessageQueue* createMessageQueue() = 0;
     virtual ~ConcurrencyAbstractFactory() {}
+
+    static ConcurrencyAbstractFactory* getInstance();
 };
 
 #endif //PLATFORMINDEPENTCONCURENCY_CONCURRENCY_ABSTRACT_FACTORY_H

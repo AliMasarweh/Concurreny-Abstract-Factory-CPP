@@ -9,7 +9,7 @@ find_package(Threads)
 add_executable(PlatformIndepentConcurency main.cpp concurrency_abstract_factory.h thread.h mutex.h
         linux_thread.h linux_thread.cpp linux_mutex.h linux_mutex.cpp
         message_queue.h linux_message_queue.h linux_message_queue.cpp linux_concurrency_abstract_factory.h
-        linux_concurrency_abstract_factory.cpp)
+        linux_concurrency_abstract_factory.cpp concurrency_abstract_factory.cpp)
 #target_link_libraries(consumer_producer gtest gtest_main pthread)
 target_link_libraries(PlatformIndepentConcurency ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(PlatformIndepentConcurency rt)
