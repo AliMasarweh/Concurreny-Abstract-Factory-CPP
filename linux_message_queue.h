@@ -6,7 +6,6 @@
 #define PLATFORMINDEPENTCONCURENCY_LINUX_MESSAGE_QUEUE_H
 
 
-#include <bits/mqueue.h>
 #include "message_queue.h"
 
 class LinuxMessageQueue : public MessageQueue
