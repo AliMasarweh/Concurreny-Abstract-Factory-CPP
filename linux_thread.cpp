@@ -17,7 +17,6 @@ void LinuxThread::run(void* (*func_to_execute)(void *), void *args)
 
 void *LinuxThread::join()
 {
-    void** res;
-    pthread_join(m_thread, res);
-    return *res;
+    pthread_join(m_thread, NULL);
+    return NULL;
 }
