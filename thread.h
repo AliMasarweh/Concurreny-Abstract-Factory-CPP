@@ -8,7 +8,7 @@
 class Thread
 {
 public:
-    virtual void run() = 0;
+    virtual void run(void* (*func_to_execute)(void *), void *args) = 0;
     virtual void* join() = 0;
     virtual ~Thread() {}
 };
