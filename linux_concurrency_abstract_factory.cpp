@@ -8,6 +8,8 @@
 #include "linux_mutex.h"
 #include "linux_message_queue.h"
 
+LinuxConcurrencyAbstractFactory LinuxConcurrencyAbstractFactory::s_linux_singleton_factory;
+
 Thread *LinuxConcurrencyAbstractFactory::createThread()
 {
     return new LinuxThread();
@@ -21,4 +23,11 @@ Mutex *LinuxConcurrencyAbstractFactory::createMutex()
 MessageQueue *LinuxConcurrencyAbstractFactory::createMessageQueue()
 {
     return new LinuxMessageQueue();
+}
+
+LinuxConcurrencyAbstractFactory::LinuxConcurrencyAbstractFactory() {}
+
+ConcurrencyAbstractFactory *LinuxConcurrencyAbstractFactory::getInstance()
+{
+    return &s_linux_singleton_factory;
 }
