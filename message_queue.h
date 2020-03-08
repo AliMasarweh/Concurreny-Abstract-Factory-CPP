@@ -10,6 +10,8 @@
 class MessageQueue
 {
 public:
+    virtual void open(const char* name, int flags, int pMode, unsigned int maxMessages,
+                      unsigned char maxMessageLength) = 0;
     virtual size_t receive(char buff[], size_t len, unsigned int* priority) = 0;
     virtual int send(const char message[], size_t len, unsigned int priority) = 0;
     virtual ~MessageQueue() {}

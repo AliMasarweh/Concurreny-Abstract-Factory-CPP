@@ -5,15 +5,7 @@
 #include <mqueue.h>
 #include "linux_message_queue.h"
 
-
-LinuxMessageQueue::LinuxMessageQueue(const char* name, int flags, int pMode, unsigned int maxMessages,
-        unsigned char maxMessageLength): m_name(name)
-{
-    m_attr.mq_maxmsg = 6;
-    m_attr.mq_msgsize = 20;
-    m_mq = mq_open(m_name,  flags, pMode, &m_attr);
-}
-
+LinuxMessageQueue::LinuxMessageQueue() {}
 
 size_t LinuxMessageQueue::receive(char buff[], size_t len, unsigned int* priority)
 {
@@ -29,4 +21,12 @@ LinuxMessageQueue::~LinuxMessageQueue()
 {
     mq_unlink(m_name);
     mq_close(m_mq);
+}
+
+void LinuxMessageQueue::open(const char *name, int flags, int pMode, unsigned int maxMessages,
+                             unsigned char maxMessageLength) {
+    m_name = name;
+    m_attr.mq_maxmsg = maxMessages;
+    m_attr.mq_msgsize = maxMessageLength;
+    m_mq = mq_open(m_name,  flags, pMode, &m_attr);
 }
