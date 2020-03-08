@@ -15,6 +15,7 @@ public:
     LinuxMessageQueue(const char* name, int flags, int pMode, unsigned int maxMessages, unsigned char maxMessageLength);
     virtual size_t receive(char *buff, size_t len, unsigned int* priority);
     virtual int send(const char *message, size_t len, unsigned int priority);
+    virtual ~LinuxMessageQueue();
 
 private:
     const char* m_name;

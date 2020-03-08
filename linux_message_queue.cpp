@@ -24,3 +24,9 @@ int LinuxMessageQueue::send(const char *message, size_t len, unsigned int priori
 {
     return mq_send(m_mq, message, len, priority);
 }
+
+LinuxMessageQueue::~LinuxMessageQueue()
+{
+    mq_unlink(m_name);
+    mq_close(m_mq);
+}
