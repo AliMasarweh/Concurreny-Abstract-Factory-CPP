@@ -13,6 +13,7 @@ class ConcurrencyAbstractFactory
 public:
     virtual Thread* createThread() = 0;
     virtual Mutex* createMutex() = 0;
+    virtual ~ConcurrencyAbstractFactory() {}
 };
 
 #endif //PLATFORMINDEPENTCONCURENCY_CONCURENCY_ABSTRACT_FACTORY_H

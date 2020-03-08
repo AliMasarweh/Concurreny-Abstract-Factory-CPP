@@ -10,6 +10,7 @@ class Mutex
 public:
     virtual void lock() = 0;
     virtual void unlock() = 0;
+    virtual ~Mutex() {}
 };
 
 #endif //PLATFORMINDEPENTCONCURENCY_MUTEX_H
