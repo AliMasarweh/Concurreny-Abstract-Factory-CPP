@@ -15,3 +15,8 @@ ConcurrencyAbstractFactory *ConcurrencyAbstractFactory::getInstance()
 #endif
 }
 
+Mutex::Lock ConcurrencyAbstractFactory::createLock(Mutex* mutex)
+{
+    return Mutex::Lock(mutex);
+}
+

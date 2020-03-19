@@ -6,6 +6,7 @@
 #define PLATFORMINDEPENTCONCURENCY_CONCURRENCY_ABSTRACT_FACTORY_H
 
 #include "semaphore.h"
+#include "mutex.h"
 
 class Thread;
 class Mutex;
@@ -18,6 +19,7 @@ public:
     virtual Mutex* createMutex() = 0;
     virtual MessageQueue* createMessageQueue() = 0;
     virtual Semaphore* createSemaphore(unsigned char threadsNum) = 0;
+    Mutex::Lock createLock(Mutex* mutex);
     virtual ~ConcurrencyAbstractFactory() {}
 
     static ConcurrencyAbstractFactory* getInstance();

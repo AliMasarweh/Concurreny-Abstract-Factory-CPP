@@ -5,6 +5,7 @@
 #ifndef PLATFORMINDEPENTCONCURENCY_SEMAPHORE_H
 #define PLATFORMINDEPENTCONCURENCY_SEMAPHORE_H
 
+#include <stddef.h>
 
 class Semaphore
 {
