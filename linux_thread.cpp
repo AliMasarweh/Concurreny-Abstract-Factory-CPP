@@ -18,6 +18,7 @@ LinuxThread::LinuxThread(void *(*func_to_execute)(void *), void *args) :
 
 void *LinuxThread::join()
 {
+    m_hasJoined = true;
     void* res;
     pthread_join(m_thread, &res);
 
