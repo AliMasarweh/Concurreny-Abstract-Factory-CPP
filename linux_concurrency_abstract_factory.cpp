@@ -8,6 +8,7 @@
 #include "linux_thread.h"
 #include "linux_mutex.h"
 #include "linux_message_queue.h"
+#include "linux_semaphore.h"
 
 LinuxConcurrencyAbstractFactory LinuxConcurrencyAbstractFactory::s_linux_singleton_factory;
 
@@ -31,6 +32,10 @@ LinuxConcurrencyAbstractFactory::LinuxConcurrencyAbstractFactory() {}
 ConcurrencyAbstractFactory *LinuxConcurrencyAbstractFactory::getInstance()
 {
     return &s_linux_singleton_factory;
+}
+
+Semaphore *LinuxConcurrencyAbstractFactory::createSemaphore(unsigned char threadsNum) {
+    return new LinuxSemaphore(threadsNum);
 }
 
 #endif //__linux__

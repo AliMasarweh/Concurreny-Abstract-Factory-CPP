@@ -15,6 +15,8 @@ public:
     Thread *createThread(void* (*func_to_execute)(void *), void *args);
     Mutex *createMutex();
     MessageQueue *createMessageQueue();
+    Semaphore *createSemaphore(unsigned char threadsNum);
+
     static ConcurrencyAbstractFactory* getInstance();
 
 private:

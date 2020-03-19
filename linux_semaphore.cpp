@@ -35,6 +35,7 @@ void LinuxSemaphore::timedWait(size_t nanoSeconds)
     sem_timedwait(&m_semaphore, &ts);
 }
 
-LinuxSemaphore::~LinuxSemaphore() {
-
+LinuxSemaphore::~LinuxSemaphore()
+{
+    sem_destroy(&m_semaphore);
 }
