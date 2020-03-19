@@ -5,6 +5,8 @@
 #ifndef PLATFORMINDEPENTCONCURENCY_LINUX_MESSAGE_QUEUE_H
 #define PLATFORMINDEPENTCONCURENCY_LINUX_MESSAGE_QUEUE_H
 
+#ifdef __linux__
+
 #include <mqueue.h>
 #include "message_queue.h"
 
@@ -24,5 +26,6 @@ private:
     mqd_t m_mq;
 };
 
+#endif //__linux__
 
 #endif //PLATFORMINDEPENTCONCURENCY_LINUX_MESSAGE_QUEUE_H

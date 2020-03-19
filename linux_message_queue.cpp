@@ -2,6 +2,8 @@
 // Created by ali-masa on 3/8/20.
 //
 
+#ifdef __linux__
+
 #include <mqueue.h>
 #include "linux_message_queue.h"
 
@@ -30,3 +32,5 @@ void LinuxMessageQueue::open(const char *name, int flags, int pMode, unsigned in
     m_attr.mq_msgsize = maxMessageLength;
     m_mq = mq_open(m_name,  flags, pMode, &m_attr);
 }
+
+#endif

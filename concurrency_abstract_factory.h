@@ -12,7 +12,7 @@ class MessageQueue;
 class ConcurrencyAbstractFactory
 {
 public:
-    virtual Thread* createThread() = 0;
+    virtual Thread* createThread(void* (*func_to_execute)(void *), void *args) = 0;
     virtual Mutex* createMutex() = 0;
     virtual MessageQueue* createMessageQueue() = 0;
     virtual ~ConcurrencyAbstractFactory() {}
