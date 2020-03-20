@@ -9,7 +9,13 @@
 
 LinuxSemaphore::LinuxSemaphore(size_t threadsNum) :Semaphore(threadsNum)
 {
-    sem_init(&m_semaphore, 0, threadsNum);
+    sem_init(&m_semaphore, 0, m_threadsNum);
+}
+
+
+LinuxSemaphore::LinuxSemaphore(const LinuxSemaphore &topCopy) :Semaphore(topCopy.m_threadsNum)
+{
+    sem_init(&m_semaphore, 0, m_threadsNum);
 }
 
 void LinuxSemaphore::wait()

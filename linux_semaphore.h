@@ -12,6 +12,7 @@
 class LinuxSemaphore : public Semaphore {
 public:
     LinuxSemaphore(size_t threadsNum);
+    LinuxSemaphore(const LinuxSemaphore& topCopy);
     virtual void wait();
     virtual void post();
     virtual void tryWait();
