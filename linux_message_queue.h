@@ -21,6 +21,9 @@ public:
     virtual ~LinuxMessageQueue();
 
 private:
+    LinuxMessageQueue(const LinuxMessageQueue&);
+    LinuxMessageQueue& operator=(const LinuxMessageQueue&);
+
     const char* m_name;
     mq_attr m_attr;
     mqd_t m_mq;

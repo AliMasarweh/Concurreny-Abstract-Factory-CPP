@@ -2,6 +2,8 @@
 // Created by ali-masa on 3/19/20.
 //
 
+#ifdef __linux__
+
 #include <bits/time.h>
 #include <time.h>
 #include "linux_semaphore.h"
@@ -54,3 +56,5 @@ LinuxSemaphore::~LinuxSemaphore()
 {
     sem_destroy(&m_semaphore);
 }
+
+#endif

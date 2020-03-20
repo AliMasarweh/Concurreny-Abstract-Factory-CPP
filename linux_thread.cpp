@@ -31,4 +31,8 @@ LinuxThread::~LinuxThread()
         pthread_detach(m_thread);
 }
 
+LinuxThread::LinuxThread(const LinuxThread & thread): Thread(thread.m_threadFuncPntr, thread.m_args) {}
+
+LinuxThread &LinuxThread::operator=(const LinuxThread &) { return *this; }
+
 #endif

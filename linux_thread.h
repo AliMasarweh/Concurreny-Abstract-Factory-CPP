@@ -19,6 +19,9 @@ public:
     ~LinuxThread();
 
 private:
+    LinuxThread(const LinuxThread&);
+    LinuxThread& operator=(const LinuxThread& );
+
     pthread_t m_thread;
 };
 

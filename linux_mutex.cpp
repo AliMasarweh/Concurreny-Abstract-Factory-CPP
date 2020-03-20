@@ -12,6 +12,19 @@ LinuxMutex::LinuxMutex()
     pthread_mutex_init(&m_mutex, NULL);
 }
 
+
+LinuxMutex::LinuxMutex(const LinuxMutex &toCopy)
+{
+    pthread_mutex_init(&m_mutex, NULL);
+}
+
+LinuxMutex &LinuxMutex::operator=(const LinuxMutex &toCopy)
+{
+    pthread_mutex_destroy(&m_mutex);
+    pthread_mutex_init(&m_mutex, NULL);
+    return *this;
+}
+
 void LinuxMutex::lock()
 {
     pthread_mutex_lock(&m_mutex);

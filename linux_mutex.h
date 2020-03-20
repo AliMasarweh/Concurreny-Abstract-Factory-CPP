@@ -14,6 +14,8 @@ class LinuxMutex : public Mutex
 {
 public:
     LinuxMutex();
+    LinuxMutex(const LinuxMutex& toCopy);
+    LinuxMutex& operator=(const LinuxMutex& toCopy);
     virtual void lock();
     virtual void tryLock();
     virtual void unlock();

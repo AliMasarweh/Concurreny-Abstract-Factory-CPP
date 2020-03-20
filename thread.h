@@ -15,8 +15,6 @@ public:
 
 protected:
     bool m_hasJoined;
-
-private:
     void* (*m_threadFuncPntr)(void *);
     void* m_args;
 };

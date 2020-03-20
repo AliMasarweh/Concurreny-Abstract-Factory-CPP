@@ -33,4 +33,8 @@ void LinuxMessageQueue::open(const char *name, int flags, int pMode, unsigned in
     m_mq = mq_open(m_name,  flags, pMode, &m_attr);
 }
 
+LinuxMessageQueue::LinuxMessageQueue(const LinuxMessageQueue &) { }
+
+LinuxMessageQueue &LinuxMessageQueue::operator=(const LinuxMessageQueue &) { return *this; }
+
 #endif
