@@ -18,6 +18,15 @@ LinuxSemaphore::LinuxSemaphore(const LinuxSemaphore &topCopy) :Semaphore(topCopy
     sem_init(&m_semaphore, 0, m_threadsNum);
 }
 
+
+LinuxSemaphore &LinuxSemaphore::operator=(const LinuxSemaphore &topCopy)
+{
+    m_threadsNum = topCopy.m_threadsNum;
+    sem_destroy(&m_semaphore);
+    sem_init(&m_semaphore, 0, m_threadsNum);
+    return *this;
+}
+
 void LinuxSemaphore::wait()
 {
     sem_wait(&m_semaphore);
